@@ -72,3 +72,28 @@ public:
 };
   ```
   
+
+ 
+  #### approach 2: 
+
+ ``` C++``` 
+  ```  
+
+ class Solution {
+public:
+    int maximumDifference(vector<int>& nums) {
+        int ans = -1;
+        int minv =INT_MAX;
+
+        for (int i = 0; i < nums.size(); i++) {
+           minv = min(nums[i],minv);
+           if(minv != nums[i]){
+            ans = max(ans,nums[i]-minv);
+           }
+        }
+
+        return max(ans,-1);
+    }
+}; 
+
+ ``` 
